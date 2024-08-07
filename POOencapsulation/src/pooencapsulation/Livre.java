@@ -37,6 +37,14 @@ public class Livre {
         System.out.print(this.getNbPages());
         System.out.println(" pages.");
     }
+    /**
+     * Affiche le prix du livre
+     */
+    public void afficherPrix() {
+        System.out.print("Le prix du livre est ");
+        System.out.print(this.getPrix());
+        System.out.println(" euros."); 
+    }
     // </editor-fold>
     // <editor-fold defaultstate="collapsed" desc="Getter">
     /**

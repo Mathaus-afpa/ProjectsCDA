@@ -24,6 +24,13 @@ public class Bibliotheque {
         Livre livre3 = new Livre("Catherine Thrush", "Dungeon Chronicle", 300);
         livre1.afficheToi();
         livre2.afficheToi();
+        livre3.setPrix(25.24);
+        Livre livre4 = new Livre("Maud Jan-Ailleret", "Donne-moi des fils ou je meurs", 7.99);
+        livre4.setPrix(1);
+        livre4.setNbPages(204);
         livre3.afficheToi();
+        livre3.afficherPrix();
+        livre4.afficheToi();
+        livre4.afficherPrix();   
     }
 }
