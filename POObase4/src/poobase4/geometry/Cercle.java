@@ -25,6 +25,30 @@ public class Cercle {
     public double surface() {
         return Math.PI * getRayon() * getRayon();
     }
+    /**
+     * Ecrit dans la console si un point appartient au cercle ou non
+     * @param point 
+     */
+    public void testAppartenance(Point point) {
+        if (point == null || this.centre == null) {
+            System.out.println("Le centre ou le point est null.");
+        } else {
+            double distanceX = Math.pow(point.getAbscisse() - this.centre.getAbscisse(), 2);
+            double distanceY = Math.pow(point.getOrdonnee() - this.centre.getOrdonnee(), 2);
+            double distance = Math.sqrt(distanceX + distanceY);
+            System.out.print("Le point de coordonnee (");
+            System.out.print(point.getAbscisse());
+            System.out.print(",");
+            System.out.print(point.getOrdonnee());
+            System.out.print(")");
+            if (distance == this.rayon) {
+                System.out.print(" appartient au cercle.");
+            } else {
+                System.out.print(" n'appartient pas au cercle.");
+            }
+            System.out.println();
+        }
+    }
     // </editor-fold>
     // <editor-fold defaultstate="collapsed" desc="Getter">
     /**
