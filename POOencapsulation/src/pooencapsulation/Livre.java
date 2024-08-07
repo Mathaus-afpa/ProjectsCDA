@@ -12,10 +12,17 @@ public class Livre {
         setTitre(unTitre);
         setNbPages(nbPages);
     }
+    public Livre(String unAuteur, String unTitre, double prix) {
+        setAuteur(unAuteur);
+        setTitre(unTitre);
+        setPrix(prix);
+    }
     // </editor-fold>
     // <editor-fold defaultstate="collapsed" desc="Proprietes">
     private String titre, auteur;
     private int nbPages;
+    private double prix;
+    private boolean prixFixe = false;
     // </editor-fold>
     // <editor-fold defaultstate="collapsed" desc="Methodes">
     /**
@@ -53,6 +60,13 @@ public class Livre {
     public int getNbPages() {
         return this.nbPages;
     }
+    /**
+     * Getter du prix
+     * @return 
+     */
+    public double getPrix() {
+       return this.prix; 
+    }
     // </editor-fold>
     // <editor-fold defaultstate="collapsed" desc="Setter">
     /**
@@ -79,6 +93,18 @@ public class Livre {
         } else {
             this.nbPages = n;
         }
+    }
+    /**
+     * Setter du prix
+     * @param prix 
+     */
+    public final void setPrix(double prix) {
+        if (!prixFixe && prix >= 0) {
+            this.prix = prix;
+            this.prixFixe = true;
+        } else {
+            System.err.println("Impossible de changter le prix");
+        }    
     }
     // </editor-fold>
 }
