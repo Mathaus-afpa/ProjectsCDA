@@ -57,7 +57,11 @@ public class Livre {
      * @param n 
      */
     public final void setNbPages(int n) {
-        this.nbPages = (n < 0) ? 0 : n;
+        if (n < 0 ) {
+            System.err.println("Le nombre de page ne peut pas etre negatif.");
+        } else {
+            this.nbPages = n;
+        }
     }
     // </editor-fold>
 }
